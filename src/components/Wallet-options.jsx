@@ -4,14 +4,19 @@ import { useConnect } from 'wagmi';
 export function WalletOptions() {
     const { connectors, connect } = useConnect();
 
-    return connectors.map((connector) => (
-        <WalletOption 
-            key={connector.id}
-            connector={connector}
-            onClick={() => connect({ connector })}
-        />
-    ));
+    return (
+        <div className="container"> 
+            {connectors.map((connector) => (
+                <WalletOption 
+                    key={connector.id}
+                    connector={connector}
+                    onClick={() => connect({ connector })}
+                />
+            ))}
+        </div>
+    );
 }
+
 
 function WalletOption({ connector, onClick }) {
     const [ready, setReady] = React.useState(false);

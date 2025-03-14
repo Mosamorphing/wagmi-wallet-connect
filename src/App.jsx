@@ -9,7 +9,11 @@ const queryClient = new QueryClient()
 function ConnectWallet() {
   const { isConnected } = useAccount()
   if (isConnected) return <Account />
-  return <WalletOptions />
+  return (
+    <div className="container"> 
+      {isConnected ? <Account /> : <WalletOptions />}
+    </div>
+  );
 }
 
 function App() {
