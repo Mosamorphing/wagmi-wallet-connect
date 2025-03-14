@@ -30,6 +30,12 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  display: flex;
+  flex-direction: row; /* or column, depending on your layout */
+  gap: 1rem; /* Adjust the gap value as needed */
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -66,3 +72,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
